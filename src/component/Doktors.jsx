@@ -7,7 +7,8 @@ import Col from "react-bootstrap/Col";
 const Doktors = ({handleData}) => {
  
   return (
-    <Container>
+    <Container className="p-2">
+      <h2 className="text-center">Our Doctors</h2>
       <Row className="g-3">
         {doctorData.map((item,index) => (
           <Col key={index}>

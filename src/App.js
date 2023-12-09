@@ -1,7 +1,7 @@
-
-import Doktors from "./component/Doktors"
-import Appoinment from "./component/Appoinment"
+import Doktors from "./component/Doktors";
+import Appoinment from "./component/Appoinment";
 import { useState } from "react";
+
 function App() {
   const [data, setData] = useState({
     patientName: "",
@@ -10,11 +10,12 @@ function App() {
   const handleData = (e) => {
     setData({ ...data, [e.target.id]: e.target.value });
   };
-  
+
   return (
-    <div>
-      <Doktors handleData={handleData}  />
-      <Appoinment handleData={handleData} data={data}  />
+    <div className="p-2">
+      <h1 className="text-center">Hospital Doctors</h1>
+      <Doktors handleData={handleData} />
+      <Appoinment handleData={handleData} data={data} />
     </div>
   );
 }
