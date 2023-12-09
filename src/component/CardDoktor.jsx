@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import AddModal from './AddModal';
 import { useState } from "react";
-const CardDoktor = ({name,img,dep}) => {
+const CardDoktor = ({name,img,dep,handleData}) => {
   const [show, setShow] = useState(false);
   return (
     <div>
@@ -14,7 +14,7 @@ const CardDoktor = ({name,img,dep}) => {
         </Card.Text>
       </Card.Body>
     </Card>
-    <AddModal name={name} show={show} setShow={setShow}/>
+    <AddModal name={name} show={show} setShow={setShow} handleData={handleData}  />
     </div>
   );
 }
