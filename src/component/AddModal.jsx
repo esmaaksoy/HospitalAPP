@@ -1,4 +1,3 @@
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 const AddModal = ({show,name,setShow}) => {
@@ -7,15 +6,17 @@ const AddModal = ({show,name,setShow}) => {
     <div>
       <Modal show={show} onHide={()=>setShow(!show)} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title >{name}</Modal.Title>
+          <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={()=>setShow(!show)}>
-            Close
+          Submit
           </Button>
           <Button variant="primary" onClick={()=>setShow(!show)}>
-            Save Changes
+           Close
           </Button>
         </Modal.Footer>
       </Modal>
