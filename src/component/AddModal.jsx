@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 const AddModal = ({ show, name, setShow, setData, data }) => {
   
-
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
   const handleSubmit = (e) => {

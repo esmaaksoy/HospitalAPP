@@ -7,7 +7,9 @@ const Appoinment = ({ data, setData }) => {
 const handleDelete=(e)=>{
   setData(data.filter((item)=>item.id !== e ))
 }
-
+const handleConsulted=(id)=>{
+  setData(data.map((item)=> item.id == id ? {...item, consulted: !item.consulted } : item))
+}
   return (
     <div>
       <h3 className="text-center">Appointment List</h3>
@@ -16,7 +18,7 @@ const handleDelete=(e)=>{
           {data.map(({ patient, day, doctor, id, consulted }) => {
          
             return (
-              <div
+              <div onDoubleClick={()=>handleConsulted(id)}
                 key={id}
                 className="d-flex justify-content-between bg-primary-subtle g-3 rounded-2 align-items-center p-2"
               >
@@ -24,7 +26,7 @@ const handleDelete=(e)=>{
                   <h5>{doctor}</h5>
                   <h5>{patient}</h5>
                 </div>
-                {consulted ? <Consulted /> : <div> <h5>{day}</h5></div>}
+                {consulted ? <Consulted /> : <div><h5>{day}</h5></div>}
                 <div>
                   <FaTimesCircle className="display-6 text-dark" onClick={()=>handleDelete(id)}/>
                 </div>
