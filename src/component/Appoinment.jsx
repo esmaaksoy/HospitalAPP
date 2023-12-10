@@ -3,7 +3,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Consulted from "./Consulted";
 
-const Appoinment = ({ data, handleData }) => {
+const Appoinment = ({ data, setData }) => {
+const handleDelete=(e)=>{
+  setData(data.filter((item)=>item.id !== e ))
+}
 
   return (
     <div>
@@ -11,7 +14,7 @@ const Appoinment = ({ data, handleData }) => {
       <Container>
         <Row>
           {data.map(({ patient, day, doctor, id, consulted }) => {
-            const formattedDay = day.toLocaleDateString();
+         
             return (
               <div
                 key={id}
@@ -20,11 +23,10 @@ const Appoinment = ({ data, handleData }) => {
                 <div>
                   <h5>{doctor}</h5>
                   <h5>{patient}</h5>
-                 
                 </div>
-                {consulted ? <Consulted /> : <div> <h5>{formattedDay}</h5></div>}
+                {consulted ? <Consulted /> : <div> <h5>{day}</h5></div>}
                 <div>
-                  <FaTimesCircle className="display-6 text-dark" />
+                  <FaTimesCircle className="display-6 text-dark" onClick={()=>handleDelete(id)}/>
                 </div>
               </div>
             );

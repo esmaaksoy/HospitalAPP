@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 const AddModal = ({ show, name, setShow, setData, data }) => {
   
+
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
   const handleSubmit = (e) => {
@@ -11,24 +12,24 @@ const AddModal = ({ show, name, setShow, setData, data }) => {
     setData([
       ...data,
       {
-        id: "4",
+        id: new Date().getTime(),
         patient: patientName,
         day: date,
         consulted: false,
         doctor: name,
       },
     ]);
-    console.log(data)
+   setShow(false)
   };
 
   return (
     <div>
-      <Modal show={show} onHide={() => setShow(!show)} animation={false}>
+      <Modal show={show} onHide={() => setShow(false)} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit}>
+          <Form >
             <Form.Group className="mb-3">
               <Form.Label>Patient Name</Form.Label>
               <Form.Control
@@ -36,7 +37,6 @@ const AddModal = ({ show, name, setShow, setData, data }) => {
                 placeholder="Enter a name"
                 onChange={(e) => setPatientName(e.target.value)}
                 id="patient"
-                value={patientName}
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -45,13 +45,12 @@ const AddModal = ({ show, name, setShow, setData, data }) => {
                 type="datetime-local"
                 onChange={(e) => setDate(e.target.value)}
                 id="day"
-                value={date}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit" variant="success" onClick={() => setShow(false)}>
+          <Button type="submit" variant="success" onClick={handleSubmit}>
             Submit
           </Button>
           <Button variant="primary" onClick={() => setShow(false)}>

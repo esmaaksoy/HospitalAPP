@@ -9,7 +9,7 @@ export const appointmentData = [
     {
       id: 2,
       patient: "Harry Coming",
-      day: new Date(),
+      day: new Date().toLocaleString(),
       consulted: false,
       doctor: "Dr. Jessica White",
     },

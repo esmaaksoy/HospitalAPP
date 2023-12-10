@@ -5,15 +5,7 @@ import { appointmentData } from "./helper/data";
 function App() {
 
   const [data, setData] = useState(appointmentData);
-  console.log([
-    ...data,
-    {
-      id: "4",
-      patient: "esma",
-      day: 12,
-      consulted: false,
-      doctor: "ali",
-    }]) 
+ 
   return (
     <div className="p-2">
       <h1 className="text-center">Hospital Doctors</h1>
