@@ -2,7 +2,7 @@ export const appointmentData = [
     {
       id: 1,
       patient: "Barry Vermont",
-      day: new Date(),
+      day: new Date().toLocaleString(),
       consulted: true,
       doctor: "Dr. Hazel Valery",
     },
@@ -16,7 +16,7 @@ export const appointmentData = [
     {
       id: 3,
       patient: "Aaron Black",
-      day: new Date(),
+      day: new Date().toLocaleString(),
       consulted: true,
       doctor: "Dr. Jasmine Carpanter",
     },

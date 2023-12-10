@@ -15,8 +15,8 @@ const handleConsulted=(id)=>{
       <h3 className="text-center">Appointment List</h3>
       <Container>
         <Row>
+        {data.length < 1 && <img src="./img/appointment.jpg" width="70%"/>}
           {data.map(({ patient, day, doctor, id, consulted }) => {
-         
             return (
               <div onDoubleClick={()=>handleConsulted(id)}
                 key={id}
