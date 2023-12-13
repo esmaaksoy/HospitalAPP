@@ -28,10 +28,6 @@ const Doctors = ({ handleAdd }) => {
               alt={name}
               className="img-thumbnail doctor-img "
               onClick={() => handleShow(name)}
-              // onClick={() => {
-              //   setShow(true);
-              //   setDrName(name);
-              // }}
             />
             <h5>{name}</h5>
             <h6>{dep} </h6>
@@ -43,7 +39,6 @@ const Doctors = ({ handleAdd }) => {
         show={show}
         drName={drName}
         handleAdd={handleAdd}
-        // handleClose={() => setShow(false)}
       />
     </Container>
   );
